@@ -1,0 +1,45 @@
+# PANDAS NLP TUTORIAL
+
+Workflow
+- read file
+- explore text
+- clean text/remove emojis/labeling
+- explore cleaned text
+
+NLP/Pandas Concepts
+- columns, rows
+- dataframes vs. series
+- indexes
+- grouping and aggregation
+- summary statistics
+- distributions and plotting
+- text extraction - hashtags and mentions (regex)
+- n-grams, word vectors, bag of words
+- lemmas
+
+Feature extraction
+- bag of words
+- POS tagging
+  --> as used in paper
+- using equivalence class for URL/USERNAME/etc
+  --> view effects of using and not using them
+- repeated letters
+  --> paper normalizes all repeated letters to 2
+  --> could also see difference between doing this (keeping as new token that potentially
+      has exaggerated/polarizing effect) and having separate feature
+  --> or could add indicator to word
+    love_<# of repeated letters>
+    looooveeee => love2 (or love6)
+  --> similar strategy for misspellings
+    love_SIC
+
+- remove tweets with both emoticons
+- remove retweets
+
+- using more than just :) and :(
+  - :D >:( etc.?
+  - see mapping in paper
+
+- using classifier, analyze sentiment over time related to a particular hashtag
+  - normalize query terms
+  - ex: movie, book, event, politics,

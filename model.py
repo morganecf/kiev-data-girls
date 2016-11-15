@@ -75,22 +75,11 @@ def learn_features(tweets, targets, train_folds, test_folds):
 
   # Initialize word vectorizer
   word_vectorizer = CountVectorizer(ngram_range=(1, 2), analyzer='word')
-  # CountVectorizer(analyzer='word', binary=False, decode_error='strict',
-  #         dtype=<class 'numpy.int64'>, encoding='utf-8', input='content',
-  #         lowercase=True, max_df=1.0, max_features=None, min_df=1,
-  #         ngram_range=(1, 2), preprocessor=None, stop_words=None,
-  #         strip_accents=None, token_pattern='(?u)\\b\\w\\w+\\b',
-  #         tokenizer=None, vocabulary=None
 
   # Create word by document matrix - creates a sparse matrix
   # This must be learned on the training data
   word_doc_train = word_vectorizer.fit_transform(train_X)
   # n x m, where n = number of rows, m = number of words
-
-  # View frequencies by count
-  # frequencies = sum(word_doc).toarray()[0]
-  # counts = pd.Series(frequencies, index=word_vectorizer.get_feature_names())
-  # sorted_counts = counts.sort_values(ascending=False)
 
   # Find word frequencies on test data (only uses words from train)
   word_doc_test = word_vectorizer.transform(test_X)

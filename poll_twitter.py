@@ -3,8 +3,14 @@ import json
 import urllib
 import requests
 
-password = sys.argv[1]
-bearer_token = sys.argv[2]
+# password = sys.argv[1]
+# bearer_token = sys.argv[1]
+
+# bearer_token = 'D8MPXCSE0RdkNES5CrPLSxYd2'
+bearer_token = '46526752-og4BYM3wKbDNwnMcy1LwhMWuPYFumCGIQp9jLM7YA'
+query = 'trump'
+fname = 'test.csv'
+max_tweets = 100
 
 
 def make_request(method, url):

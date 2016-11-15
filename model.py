@@ -184,10 +184,10 @@ metrics = {
 n_folds = 5
 
 # Format X and Y
-tweets, targets = format_data('../tweets_with_emoticons.csv', 10000)
+tweets, targets = format_data('../tweets_with_emoticons.csv', 5000)
 
 # Perform cross validation
-output = cross_validation(tweets, targets, 5, models['gaussian_naive_bayes'], metrics)
+output = cross_validation(tweets, targets, 5, models['decision_tree'], metrics)
 
 # ROC for one of the folds
 plot_roc(output[0])
